@@ -21,7 +21,7 @@ import { Button } from 'primevue'
         </svg>
         <span class="relative">DesFeedback</span>
       </span>
-      fácil e rápido para todos expressarem.
+      fácil e rápido 100% anônima.
     </h1>
 
     <p class="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
@@ -31,11 +31,11 @@ import { Button } from 'primevue'
 
     <div class="mt-10 flex justify-center gap-x-6">
       <router-link
-        :to="{ name: 'register' }"
+        :to="{ name: 'signup' }"
         class="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
         variant="solid"
         color="slate"
-        href="/register"
+        href="/signup"
         >Se Cadastre (Primeira mensagem free)</router-link
       >
       <a
@@ -309,7 +309,7 @@ import { Button } from 'primevue'
             variant="outline"
             color="white"
             aria-label="Get started with the Starter plan for $9"
-            href="/register"
+            href="/signup"
             >Get started</a
           >
         </section>
@@ -466,7 +466,7 @@ import { Button } from 'primevue'
             variant="solid"
             color="white"
             aria-label="Get started with the Small business plan for $15"
-            href="/register"
+            href="/signup"
             >Get started</a
           >
         </section>
@@ -581,7 +581,7 @@ import { Button } from 'primevue'
             variant="outline"
             color="white"
             aria-label="Get started with the Enterprise plan for $39"
-            href="/register"
+            href="/signup"
             >Get started</a
           >
         </section>

@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { auth } from '../firebase.js';
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,9 +23,9 @@ const router = createRouter({
       component: () => import('../template/TemplateRegister.vue'),
       children: [
         {
-          path: 'register',
+          path: 'signup',
           meta: { title: 'register' },
-          name: 'register',
+          name: 'signup',
           component: () => import('../views/auth/RegisterView.vue')
         },
         {
@@ -34,6 +36,21 @@ const router = createRouter({
         }
       ]
     },
+
+    {
+      path: '/',
+      meta: { requiresAuth: true },
+      component: () => import('../template/TemplateDash.vue'),
+      children: [
+        {
+          path: 'dashboard',
+          meta: { title: 'Dashboard' },
+          name: 'dashboard',
+          component: () => import('../views/dash/HomeView.vue')
+        }
+      ]
+    },
+
     {
       name: 'NotFound',
       path: '/:pathMatch(.*)*',
@@ -41,5 +58,15 @@ const router = createRouter({
     },
   ],
 })
+
+router.beforeEach((to, from, next) => {
+  const currentUser = auth.currentUser;
+  if (to.matched.some(record => record.meta.requiresAuth) && !currentUser) {
+    next('/login');
+  } else {
+    next();
+  }
+});
+
 
 export default router
