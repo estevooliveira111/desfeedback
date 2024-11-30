@@ -9,8 +9,8 @@ const firebaseApp = initializeApp({
   projectId: "feedback-dbed7",
   storageBucket: "feedback-dbed7.firebasestorage.app",
   messagingSenderId: "959798580968",
-  appId: "1:959798580968:web:134e37ee6ce71e28331b5d",
-  measurementId: "G-6HMFRQJEBW"
+  appId: "1:959798580968:web:5e214c6d45135198331b5d",
+  measurementId: "G-4SMGM3JWTW"
 });
 
 const db = getFirestore(firebaseApp);

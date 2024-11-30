@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "dist",
+    "site": "desfeedback",
     "ignore": [
       "firebase.json",
       "**/.*",
